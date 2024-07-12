@@ -8,6 +8,12 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/andreyunis/my-spring-boot-app.git'
             }
         }
+	stage('Test') {
+            steps {
+                // Construye el proyecto Maven
+                bat 'mvn test'
+            }
+        }
         stage('Build') {
             steps {
                 // Construye el proyecto Maven
